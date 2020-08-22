@@ -10,6 +10,21 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-<a href = "https://michaelfrancenelson.github.io/eco_602_634_2020/">Analysis of Environmental Data</a>
+<style>
 
+body {
+  background-image: url('`r here::here("images", "fish_skeleton_step_02.jpg")`');
+  color: white;
+  font-size: 150%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+</style>
+
+<!-- <div class="my-container"> -->
+<!-- <img src='`r here::here("images", "fish_skeleton_step_02.jpg")`'> -->
+<a href = "https://michaelfrancenelson.github.io/eco_602_634_2020/" style="color: white">Analysis of Environmental Data</a>
+<!-- </div> -->
 
