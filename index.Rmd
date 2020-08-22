@@ -1,0 +1,18 @@
+---
+title: "main github page"
+author: "Michael France Nelson"
+date: "August 21, 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+
+
+<a href = "https://michaelfrancenelson.github.io/eco_602_634_2020/">Analysis of Environmental Data</a>
+
+
