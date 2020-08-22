@@ -25,6 +25,6 @@ body {
 
 <!-- <div class="my-container"> -->
 <!-- <img src='`r here::here("images", "fish_skeleton_step_02.jpg")`'> -->
-<a href = "https://michaelfrancenelson.github.io/eco_602_634_2020/" style="color: white">Analysis of Environmental Data</a>
+<a href = "https://michaelfrancenelson.github.io/eco_602_634_2020/" style="color: white; font-weight: 900; font-size: 880%;">Analysis of Environmental Data</a>
 <!-- </div> -->
 
