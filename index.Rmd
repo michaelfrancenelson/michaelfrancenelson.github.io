@@ -2,7 +2,12 @@
 title: "¡Välkommen och bom dia monde!"
 author: "Michael France Nelson"
 date: "August 21, 2020"
-output: html_document
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
@@ -10,21 +15,37 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-<style>
+```{r build_page, echo = FALSE, eval = FALSE}
+require(rmd.utils)
+out_dir = here::here("docs")
 
-body {
-  background-image: url('`r here::here("images", "fish_skeleton_step_02.jpg")`');
-  color: white;
-  font-size: 150%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}
+rmarkdown::render(
+  input = rmd.utils::find_file("index.Rmd"),
+  output_dir = here::here("docs")
+)
 
-</style>
+```
 
-<!-- <div class="my-container"> -->
-<!-- <img src='`r here::here("images", "fish_skeleton_step_02.jpg")`'> -->
-<a href = "https://michaelfrancenelson.github.io/eco_602_634_2020/" style="color: white; font-weight: 900; font-size: 880%;">Analysis of Environmental Data</a>
-<!-- </div> -->
+
+# This page is under heavy construction!
+
+For now, please follow the links below to view projects, courses, and other resources that I'm involved with.
+
+## Courses
+
+The following are courses that I teach at the University of Massachusetts, Amherst in the Department of Environmental Conservation.
+
+- [Analysis of Environmental Data](/eco_602_634_2020/)
+
+- [Introduction to Quantitative Ecology](/intro_quant_ecol/)
+
+
+## Other UMass links
+
+- [Quantitative Sciences Group](/umass_qsg/)
+
+- [Department of Environmental Conservation at the University of Massachusetts, Amherst](https://eco.umass.edu/)
+
+- [My faculty page at UMass](https://eco.umass.edu/people/faculty/nelson-michael/)
+
 
