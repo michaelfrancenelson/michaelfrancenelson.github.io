@@ -1,5 +1,5 @@
 ---
-title: "¡Välkommen och bom dia monde!"
+title: "¡Välkommen y bom dia monde!"
 author: "Michael France Nelson"
 date: "August 21, 2020"
 output:
@@ -23,7 +23,6 @@ rmarkdown::render(
   input = rmd.utils::find_file("index.Rmd"),
   output_dir = here::here("docs")
 )
-
 ```
 
 
@@ -38,6 +37,8 @@ The following are courses that I teach at the University of Massachusetts, Amher
 - [Analysis of Environmental Data](/eco_602_634_2020/)
 
 - [Introduction to Quantitative Ecology](/intro_quant_ecol/)
+
+- [Introduction to Geographic Information Systems](/intro_gis/)
 
 
 ## Other UMass links
