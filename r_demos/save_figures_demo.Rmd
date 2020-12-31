@@ -1,0 +1,136 @@
+---
+title: "Saving Figures in RStudio"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+require(rmd.utils)
+# mander = read.csv("../data/mander.csv")
+mander = read.csv(here::here("docs", "data", "mander.csv"))
+# mander = read.csv(rmd.utils::find_file("mander.csv"))
+require(ggplot2)
+```
+
+```{r build_doc, eval=FALSE, echo = FALSE}
+
+rmarkdown::render(
+  rmd.utils::find_file("save_figures_demo.Rmd"),
+  output_dir = here::here("docs", "r_demos"))
+
+```
+
+
+
+This is a simple tutorial on how to save a plot as an image file in R/RStudio.
+
+
+# Data
+
+The data for this demo include various measurements of redbacked salamander (*Plethodon cinereus*) collected at several sites in Ithaca, NY.
+
+You can download the data file here:
+<a href="../data/mander.csv">mander.csv</a>
+
+
+These variables within the data set include:
+
+- Date of collection
+- Collector
+- Year of collection (2014)
+- Season of collection (limited to Fall for this dataset)
+- Site (A, B, C, D)
+- Snout-to-vent length (SVL) in mm
+- Total length in mm
+- Sex (male, female, or unknown)
+
+
+
+# Creating a figure
+
+Suppose I have loaded the salamander into a variable called `mander`.
+
+```{r}
+head(mander)
+```
+
+
+Using ggplot, I'll make a conditional boxplot of SVL by Site and Sex. Don't worry if you don't know what that means, the focus of this walkthrough is on saving the plot to a file.
+
+
+```{r plot_boplot}
+ggplot(mander, aes(x = Sex, y = SVL, fill = Site)) + 
+  geom_boxplot() + 
+  ggtitle("Salamander Snout to Vent Length")
+```
+
+
+
+The Plots pane in my RStudio session now looks like this:
+
+```{r plot_pane, echo = FALSE}
+knitr::include_graphics(rmd.utils::find_file("save_figure_demo_plot_pane.PNG"))
+```
+
+
+
+# Save Method 1: Export Button
+
+Notice that above the plot there is a button that says *Export*.
+
+```{r plot_pane_export_button, echo = FALSE}
+knitr::include_graphics(rmd.utils::find_file("save_figure_demo_plot_pane_export_button.PNG"))
+```
+
+Click there and choose whether you want to save the image as a `.pdf` or `.png` file.
+
+
+# Save Method 2: Programmatic
+
+You can also save a figure directly using code in R.  I prefer this method because you can more easily specify the options that you want to use for the image.
+
+The image will be saved as the `filename` that you provide.  The image will be saved in your **current working directory**.
+
+- I **strongly suggest** you use the 
+<a href="https://github.com/jennybc/here_here">here</a>
+package in conjunction with an RProject to help specify exactly where you want to save the file and avoid working directory headaches!
+
+The syntax is slightly different than what you're used to:
+
+- You have to use `png()` on the line before your plotting code.
+- The code to build your plot comes next.
+- You have to place `dev.off()` on the line after your plotting code.
+
+
+```{r, eval = FALSE}
+
+# This tells R to create an empty image file:
+png(filename = "salamander_boxplot.png")
+
+# These lines create the plot.
+# You won't see the plot in the RStudio plot window.
+ggplot(mander, aes(x = Sex, y = SVL, fill = Site)) + 
+  geom_boxplot() + 
+  ggtitle("Salamander Snout to Vent Length")
+
+# This tells R to write the graphical data to the image file and save it.
+dev.off()
+```
+
+`png()` has lots of options (see the help entry).  For example, you can specify the height and width of the output image (in pixels).
+
+I'll now have a file called **salamander_boxplot.png** in my current working directory.
+
+There are related functions for saving files to other raster and vector formats like jpg, tiff, pdf, and eps.
+
+- Check the help entry for these functions because some of the options may differ slightly from `png()`
+
+
+The best way to learn is to try it out on one of your own plots!
+
+

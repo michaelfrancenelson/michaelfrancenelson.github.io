@@ -50,3 +50,8 @@ The following are courses that I teach at the University of Massachusetts, Amher
 - [My faculty page at UMass](https://eco.umass.edu/people/faculty/nelson-michael/)
 
 
+# Coding Demos
+
+Here is a collection of short demos of how to perform some common tasks in R:
+
+- [Saving a figure to a file in R/RStudio](r_demos/save_figures_demo.html)
