@@ -1,5 +1,5 @@
 ---
-title: "¡Välkommen och bom dia monde!"
+title: "¡Välkommen y bom dia monde!"
 author: "Michael France Nelson"
 date: "August 21, 2020"
 output:
@@ -23,7 +23,6 @@ rmarkdown::render(
   input = rmd.utils::find_file("index.Rmd"),
   output_dir = here::here("docs")
 )
-
 ```
 
 
@@ -39,6 +38,8 @@ The following are courses that I teach at the University of Massachusetts, Amher
 
 - [Introduction to Quantitative Ecology](/intro_quant_ecol/)
 
+- [Introduction to Geographic Information Systems](/intro_gis/)
+
 
 ## Other UMass links
 
@@ -49,8 +50,16 @@ The following are courses that I teach at the University of Massachusetts, Amher
 - [My faculty page at UMass](https://eco.umass.edu/people/faculty/nelson-michael/)
 
 
+<<<<<<< HEAD
 ## Course Data
 
 - [Introduction to GIS](/intro_gis/)
 
 
+=======
+# Coding Demos
+
+Here is a collection of short demos of how to perform some common tasks in R:
+
+- [Saving a figure to a file in R/RStudio](r_demos/save_figures_demo.html)
+>>>>>>> a2be4328d6f999a01af2450157facb5bc350ca6a
