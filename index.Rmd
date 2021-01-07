@@ -49,3 +49,8 @@ The following are courses that I teach at the University of Massachusetts, Amher
 - [My faculty page at UMass](https://eco.umass.edu/people/faculty/nelson-michael/)
 
 
+## Course Data
+
+- [Introduction to GIS](/intro_gis/)
+
+
